@@ -1,5 +1,7 @@
 # Pep8 CamelCase para classes
 class Pessoa:
+    OLHOS = 2
+
     def __init__(self, *filhos, nome=None, idade=30):
         self.nome = nome
         self.idade = idade
@@ -17,3 +19,4 @@ if __name__ == '__main__':
     print(luciano.idade)
     for filhos in luciano.filhos:
         print(filhos.nome)
+    print(renzo.OLHOS)
