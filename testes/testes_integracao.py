@@ -20,6 +20,7 @@ from atores import Obstaculo, Porco, PassaroVermelho, PassaroAmarelo, DESTRUIDO,
     Ator, Passaro
 from fase import Fase, Ponto, EM_ANDAMENTO, VITORIA, DERROTA
 
+
 class FaseTestes(TestCase):
     def teste_acabou_com_porcos_e_passaros(self):
         fase = Fase()

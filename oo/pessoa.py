@@ -20,9 +20,21 @@ class Pessoa:
         return f'{cls} - olhos - {cls.OLHOS}'
 
 
+class Homem(Pessoa):
+    pass
+
+
+class Mutante(Pessoa):
+    OLHOS = 4
+
+    def cumprimentar(self):
+        cumprimentar_da_classe = super().cumprimentar()
+        return f'{cumprimentar_da_classe}. Eis um mutante.'
+
+
 if __name__ == '__main__':
-    renzo = Pessoa(nome='Renzo', idade=30)
-    luciano = Pessoa(renzo, nome='Luciano', idade=40)
+    renzo = Mutante(nome='Renzo', idade=30)
+    luciano = Homem(renzo, nome='Luciano', idade=40)
     print(luciano.nome)
     print(luciano.idade)
     for filhos in luciano.filhos:
@@ -31,3 +43,12 @@ if __name__ == '__main__':
     print(Pessoa.metodo_estatico(), luciano.metodo_estatico())
     print(Pessoa.nome_e_atributos_De_classe(),
           luciano.nome_e_atributos_De_classe())
+
+    pessoa = Pessoa('Anonimo')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+
+    print(isinstance(renzo, Pessoa))
+    print(isinstance(renzo, Homem))
+    print(renzo.OLHOS)
+    print(renzo.cumprimentar())
